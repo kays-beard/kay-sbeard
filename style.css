@@ -1,4 +1,4 @@
-   :root{
+:root{
     --bg: #8b0000;        /* deep festive red */
     --card: #330000;      /* darker card background */
     --muted: #f0f0f0;
@@ -8,10 +8,11 @@
 *{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
 }
 
 body{
-    margin:0;
     background: var(--bg);
     color: #fff;
     overflow-x: hidden;
@@ -121,7 +122,6 @@ body{
     font-weight: 700;
     font-size: 0.9rem;
     margin-bottom: 14px;
-    text-shadow: 0 0 2px #900;
 }
 
 /* --- Main Content --- */
@@ -282,7 +282,7 @@ body{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
-    overflow-x:auto; /* scroll for mobile carousel */
+    overflow-x:auto;
     scroll-behavior:smooth;
 }
 .review-card{
@@ -291,7 +291,7 @@ body{
     padding:25px;
     box-shadow:0 4px 10px rgba(0,0,0,0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 0 0 auto; /* carousel cards scroll nicely */
+    flex: 0 0 auto;
 }
 .review-card:hover{
     transform: translateY(-5px);
@@ -323,45 +323,14 @@ body{
 }
 
 /* --- Christmas Decorations --- */
-.christmas-tree {
+.christmas-tree, .christmas-bell, .christmas-gift {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100px;
     z-index: 1;
     pointer-events: none;
 }
-.christmas-bell {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    width: 100px;
-    z-index: 1;
-    pointer-events: none;
-}
-
-}
-
-/* --- Social Links Styling --- */
-.social-links{
-    margin:20px 0;
-    font-weight:700;
-}
-.social-links a{
-    color: var(--gold);
-    margin:0 10px;
-    text-decoration:none;
-    display:inline-flex;
-    align-items:center;
-}
-.social-links a:hover{
-    text-decoration:underline;
-}
-.social-links img{
-    width:24px;
-    height:24px;
-    margin-right:6px;
-}
+.christmas-tree { bottom: 0; left: 0; width: 120px; }
+.christmas-bell { top: 10px; right: 10px; width: 200px; }
+.christmas-gift { bottom: 10px; right: 20px; width: 200px; }
 
 /* --- Countdown Timer --- */
 .countdown{
@@ -382,13 +351,37 @@ h1, h2, h3{
 }
 
 /* --- Responsive --- */
-@media(max-width:720px){
-    .hero h1{font-size:2rem;}
-    .site-header{padding:12px 18px;}
-    .reviews-grid{grid-template-columns: repeat(auto-fit,minmax(240px,1fr));}
-    .about-inner{flex-direction:column;}
-    #orderForm{max-width:100%;}
+@media(max-width:1024px){
+    .hero h1{font-size:2.5rem;}
+    .hero p{font-size:1rem;}
+    .about-inner img{width:80%;}
 }
+@media(max-width:720px){
+    /* Hero */
+    .hero{height:50vh; padding:0 10px;}
+    .hero h1{font-size:1.8rem;}
+    .hero p{font-size:0.95rem;}
 
+    /* Header */
+    .site-header{flex-direction:column; align-items:center; gap:12px; padding:12px 18px;}
+    .site-header nav a{margin:0 8px;}
 
+    /* About Section */
+    .about-inner{flex-direction:column; gap:16px; text-align:center;}
+    .about-inner img{width:100%; max-width:300px;}
+    .about-inner .text{max-width:100%; padding:0 10px;}
 
+    /* Products */
+    .grid{gap:16px;}
+    .card img{height:200px;}
+
+    /* Order Form */
+    #orderForm{width:90%; gap:10px;}
+    #orderForm input, #orderForm select, #orderForm button{font-size:14px; padding:10px;}
+
+    /* Reviews */
+    .reviews-grid{grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:16px;}
+
+    /* Footer */
+    .site-footer{padding:20px;}
+}
