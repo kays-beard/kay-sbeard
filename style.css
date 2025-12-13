@@ -8,11 +8,10 @@
 *{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    margin:0;
-    padding:0;
 }
 
 body{
+    margin:0;
     background: var(--bg);
     color: #fff;
     overflow-x: hidden;
@@ -75,7 +74,7 @@ body{
 
 /* --- Hero Section --- */
 .hero{
-    height:78vh;
+    height:65vh;
     background-image:url('images/hero.jpg');
     background-size: cover;
     background-position: center;
@@ -99,7 +98,7 @@ body{
     color: #fff;
 }
 .hero h1{
-    font-size: 3rem;
+    font-size: 2.8rem;
     margin-bottom:10px;
     color: var(--gold);
     text-shadow: 0 4px 12px rgba(0,0,0,0.6);
@@ -185,7 +184,8 @@ body{
     flex-wrap:wrap;
 }
 .about-inner img{
-    width:420px;
+    width:100%;
+    max-width:420px;
     border-radius:12px;
     box-shadow:0 12px 40px rgba(255,215,0,0.2);
 }
@@ -322,15 +322,23 @@ body{
     position:relative;
 }
 
-/* --- Christmas Decorations --- */
-.christmas-tree, .christmas-bell,  {
+/* --- Christmas Decorations (No gift) --- */
+.christmas-tree {
     position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 120px;
     z-index: 1;
     pointer-events: none;
 }
-.christmas-tree { bottom: 0; left: 0; width: 120px; }
-.christmas-bell { top: 10px; right: 10px; width: 100px; }
-
+.christmas-bell {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 200px;
+    z-index: 1;
+    pointer-events: none;
+}
 
 /* --- Countdown Timer --- */
 .countdown{
@@ -351,39 +359,35 @@ h1, h2, h3{
 }
 
 /* --- Responsive --- */
-@media(max-width:1024px){
-    .hero h1{font-size:2.5rem;}
-    .hero p{font-size:1rem;}
-    .about-inner img{width:80%;}
-}
 @media(max-width:720px){
-    /* Hero */
-    .hero{height:50vh; padding:0 10px;}
-    .hero h1{font-size:1.8rem;}
-    .hero p{font-size:0.95rem;}
-
-    /* Header */
-    .site-header{flex-direction:column; align-items:center; gap:12px; padding:12px 18px;}
-    .site-header nav a{margin:0 8px;}
-
-    /* About Section */
-    .about-inner{flex-direction:column; gap:16px; text-align:center;}
-    .about-inner img{width:100%; max-width:300px;}
-    .about-inner .text{max-width:100%; padding:0 10px;}
-
-    /* Products */
-    .grid{gap:16px;}
-    .card img{height:200px;}
-
-    /* Order Form */
-    #orderForm{width:90%; gap:10px;}
-    #orderForm input, #orderForm select, #orderForm button{font-size:14px; padding:10px;}
-
-    /* Reviews */
-    .reviews-grid{grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:16px;}
-
-    /* Footer */
-    .site-footer{padding:20px;}
+    .hero{
+        height:50vh;
+    }
+    .hero h1{font-size:2rem;}
+    .hero p{font-size:1rem;}
+    .site-header{
+        padding:12px 18px;
+        flex-direction:column;
+        gap:10px;
+    }
+    .site-header nav a{
+        margin:6px 0;
+    }
+    .reviews-grid{
+        grid-template-columns: 1fr;
+        overflow-x:visible;
+    }
+    .about-inner{
+        flex-direction:column;
+    }
+    .about-inner img{
+        max-width:90%;
+        height:auto;
+    }
+    .grid{
+        grid-template-columns: 1fr;
+    }
+    #orderForm{
+        max-width:90%;
+    }
 }
-
-
