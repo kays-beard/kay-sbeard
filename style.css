@@ -256,4 +256,14 @@ body{
     color:gold;
     letter-spacing:2px;
 }
+/* --- Social Media Icons --- */
+.social-icon{
+    width:26px;
+    height:26px;
+    object-fit:contain;
+    margin-right:10px;
+    vertical-align:middle;
+}
+
+
 
