@@ -327,7 +327,7 @@ body{
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 120px;
+    width: 100px;
     z-index: 1;
     pointer-events: none;
 }
@@ -335,7 +335,7 @@ body{
     position: fixed;
     top: 10px;
     right: 10px;
-    width: 200px;
+    width: 100px;
     z-index: 1;
     pointer-events: none;
 }
@@ -391,3 +391,4 @@ h1, h2, h3{
         max-width:90%;
     }
 }
+
