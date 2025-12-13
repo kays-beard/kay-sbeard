@@ -74,7 +74,7 @@ body{
 
 /* --- Hero Section --- */
 .hero {
-    height: 110vh; /* increased for more vertical space */
+    height: 200vh; /* increased for more vertical space */
     background-image: url('images/hero.jpg');
     background-size: cover;
     background-position: center;
@@ -417,6 +417,7 @@ h1, h2, h3{
         max-width:90%;
     }
 }
+
 
 
 
