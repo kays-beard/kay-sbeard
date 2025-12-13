@@ -335,17 +335,11 @@ body{
     position: fixed;
     top: 0px;
     right: 0px;
-    width: 150px;
+    width: 70px;
     z-index: 1;
     pointer-events: none;
 }
-.christmas-gift {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    width: 100px;
-    z-index: 1;
-    pointer-events: none;
+
 }
 
 /* --- Social Links Styling --- */
@@ -395,4 +389,5 @@ h1, h2, h3{
     .about-inner{flex-direction:column;}
     #orderForm{max-width:100%;}
 }
+
 
