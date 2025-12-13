@@ -329,8 +329,8 @@ body{
     pointer-events: none;
 }
 .christmas-tree { bottom: 0; left: 0; width: 120px; }
-.christmas-bell { top: 10px; right: 10px; width: 200px; }
-.christmas-gift { bottom: 10px; right: 20px; width: 200px; }
+.christmas-bell { top: 10px; right: 10px; width: 100px; }
+
 
 /* --- Countdown Timer --- */
 .countdown{
@@ -385,3 +385,4 @@ h1, h2, h3{
     /* Footer */
     .site-footer{padding:20px;}
 }
+
