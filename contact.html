@@ -6,12 +6,12 @@
     <title>Contact — Kay's Beard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- Christmas Decorations -->
 <img src="images/tree.png" class="christmas-tree" alt="Christmas Tree">
 <img src="images/bell.png" class="christmas-bell" alt="Christmas Bell">
-
 
 <header class="site-header">
     <div class="logo">Kay's <span>Beard</span></div>
@@ -21,140 +21,75 @@
         <a href="about.html">About</a>
         <a href="contact.html" class="active">Contact</a>
     </nav>
-    <a class="cta" href="#orderForm">Order Now</a>
+    <a class="cta" href="shop.html">Order Now</a>
 </header>
 
 <main class="site-main">
 
-    <!-- Social Media Handles -->
+    <!-- CONTACT SECTION -->
     <section class="contact-section">
-        <h1>🎄 Connect with Us!</h1>
-        <p style="text-align:center; font-size:1.1rem; font-weight:700; color:var(--gold);">
-            <img src="images/snapchat-icon.png" alt="Snapchat" style="width:24px; vertical-align:middle;">
-            <a href="https://www.snapchat.com/add/sb-emmakay" target="_blank" style="color:#fff; font-weight:700; text-decoration:underline;">sb-emmakay</a> |
-            <img src="images/whatsapp-icon.png" alt="WhatsApp" style="width:24px; vertical-align:middle;">
-            <a href="https://wa.me/233595168723" target="_blank" style="color:#fff; font-weight:700; text-decoration:underline;">0595168723</a>
-            | <a href="tel:+233595168723" style="color:#fff; font-weight:700; text-decoration:underline;">Call</a>
+        <h1>Contact Kay’s Beard</h1>
+
+        <p>
+            Need help choosing a product or placing an order?  
+            Reach us directly — fast replies guaranteed.
         </p>
 
-        <!-- Order Form -->
-        <h2 style="margin-top:30px;">Place Your Order</h2>
+        <div class="contact-box">
 
-        <form id="orderForm">
-            <input type="text" id="orderName" placeholder="Your Full Name" required>
+            <a class="contact-link"
+               href="https://wa.me/233595168723"
+               target="_blank">
+                📞 <strong>WhatsApp & Call:</strong> 059 516 8723
+            </a>
 
-            <!-- Product Dropdown -->
-            <label for="product">Select Product</label>
-            <select id="product" required>
-                <option value="">-- Choose a product --</option>
-                <option value="Kirkland Minoxidil + Derma Roller Combo">Kirkland Minoxidil + Derma Roller Combo</option>
-                <option value="Kirkland Minoxidil">Kirkland Minoxidil</option>
-                <option value="Derma Roller">Derma Roller</option>
-                <option value="Biotin">Biotin</option>
-                <option value="Jamaican Castor Oil">Jamaican Castor Oil</option>
-                <option value="Mielle Rosemary Mint Oil">Mielle Rosemary Mint Oil</option>
-            </select>
+            <a class="contact-link"
+               href="https://www.snapchat.com/add/sb-emmakay"
+               target="_blank">
+                👻 <strong>Snapchat:</strong> sb-emmakay
+            </a>
 
-            <input type="number" id="quantity" placeholder="Quantity" required>
-            <input type="text" id="location" placeholder="Delivery Location" required>
+        </div>
+    </section>
 
-            <!-- Delivery Date Dropdowns -->
-            <label>Preferred Delivery Date</label>
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                <select id="day" required>
-                    <option value="">Day</option>
-                    <script>
-                        for (let i = 1; i <= 31; i++) {
-                            document.write(`<option value="${i}">${i}</option>`);
-                        }
-                    </script>
-                </select>
+    <!-- CUSTOMER REVIEWS -->
+    <section class="contact-reviews">
+        <h2>What Our Customers Say</h2>
 
-                <select id="month" required>
-                    <option value="">Month</option>
-                    <option value="January">January</option>
-                    <option value="February">February</option>
-                    <option value="March">March</option>
-                    <option value="April">April</option>
-                    <option value="May">May</option>
-                    <option value="June">June</option>
-                    <option value="July">July</option>
-                    <option value="August">August</option>
-                    <option value="September">September</option>
-                    <option value="October">October</option>
-                    <option value="November">November</option>
-                    <option value="December">December</option>
-                </select>
+        <div class="reviews-mini">
 
-                <select id="year" required>
-                    <option value="">Year</option>
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
-                </select>
+            <div class="review-mini-card">
+                <p>
+                    “My beard started filling in within weeks. Original products and fast delivery.”
+                </p>
+                <h4>— Prince K.</h4>
+                <div class="stars">★★★★★</div>
             </div>
 
-            <button type="submit">Submit Order</button>
-        </form>
+            <div class="review-mini-card">
+                <p>
+                    “Customer service was very helpful on WhatsApp. Highly recommended.”
+                </p>
+                <h4>— Nana E.</h4>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="review-mini-card">
+                <p>
+                    “Neat packaging, legit products, and quick response. I’ll order again.”
+                </p>
+                <h4>— Malik S.</h4>
+                <div class="stars">★★★★☆</div>
+            </div>
+
+        </div>
     </section>
 
 </main>
-
-<!-- Christmas Decorations -->
-<img src="images/tree.png" class="christmas-tree" alt="Christmas Tree">
-<img src="images/bell.png" class="christmas-bell" alt="Christmas Bell">
-<img src="images/gift.png" class="christmas-gift" alt="Christmas Gift">
 
 <footer class="site-footer">
     <p>© 2025 Kay's Beard. All Rights Reserved.</p>
 </footer>
 
-<script>
-// Order Form Submission
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    let name = document.getElementById("orderName").value;
-    let product = document.getElementById("product").value;
-    let quantity = document.getElementById("quantity").value;
-    let location = document.getElementById("location").value;
-    let day = document.getElementById("day").value;
-    let month = document.getElementById("month").value;
-    let year = document.getElementById("year").value;
-    let deliveryDate = `${day} ${month} ${year}`;
-
-    let message = `New Order from Kay's Beard:%0AName: ${name}%0AProduct: ${product}%0AQuantity: ${quantity}%0ALocation: ${location}%0ADelivery Date: ${deliveryDate}`;
-    let phone = "233595168723";
-
-    window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
-    alert("✅ Your order has been received! We’ll contact you shortly.");
-    document.getElementById("orderForm").reset();
-});
-    </main>
-    <section class="reviews">
-    <h2>What Our Customers Say</h2>
-
-    <div class="reviews-grid">
-        <div class="review-card">
-            <p>"I've been using Kay’s Beard Minoxidil for 3 months now — my beard has never looked this full!"</p>
-            <h4>— Prince K.</h4>
-            <div class="stars">★★★★★</div>
-        </div>
-
-        <div class="review-card">
-            <p>"The Jamaican Castor Oil made my beard softer and shiny. Great customer service too!"</p>
-            <h4>— Nana E.</h4>
-            <div class="stars">★★★★★</div>
-        </div>
-
-        <div class="review-card">
-            <p>"Delivery was super fast and the packaging was top-notch. I’ll definitely order again."</p>
-            <h4>— Malik S.</h4>
-            <div class="stars">★★★★☆</div>
-        </div>
-    </div>
-</script>
-
 </body>
 </html>
-
-
-
