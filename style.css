@@ -74,7 +74,7 @@ body{
 
 /* --- Hero Section --- */
 .hero{
-    height: 90vh; /* increased from 78vh */
+    height: 100vh; /* increased from 78vh */
     background-image: url('images/hero.jpg');
     background-size: cover;
     background-position: center;
@@ -413,5 +413,6 @@ h1, h2, h3{
         max-width:90%;
     }
 }
+
 
 
