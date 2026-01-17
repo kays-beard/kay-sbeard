@@ -1,8 +1,10 @@
 :root{
-    --bg: #8b0000;
-    --card: #330000;
-    --muted: #f0f0f0;
-    --gold: #ffd700;
+    --bg: #ffffff;
+    --card: #f7f7f7;
+    --text: #111111;
+    --muted: #555555;
+    --accent: #1f2937; /* dark gray */
+    --border: #e5e7eb;
 }
 
 *{
@@ -13,81 +15,88 @@
 body{
     margin:0;
     background: var(--bg);
-    color: #fff;
+    color: var(--text);
     overflow-x: hidden;
 }
 
-/* --- Header --- */
+/* ---------- HEADER ---------- */
 .site-header{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding: 18px 36px;
-    background: rgba(0,0,0,0.4);
+    padding: 16px 32px;
+    background:#ffffff;
     position: sticky;
     top:0;
     z-index:50;
-    border-bottom: 3px solid var(--gold);
+    border-bottom:1px solid var(--border);
 }
+
 .logo{
     font-weight:800;
     font-size:1.5rem;
-    color: var(--gold);
+    color: var(--accent);
 }
-.logo span{color:#fff;}
+
+.logo span{
+    color:#000;
+}
 
 .site-header nav a{
     margin:0 12px;
     color: var(--muted);
     font-weight:600;
+    text-decoration:none;
 }
-.site-header nav a.active{color: var(--gold);}
+
+.site-header nav a.active{
+    color:#000;
+}
 
 .cta{
-    background: var(--gold);
-    color:#900;
-    padding:10px 14px;
+    background:#000;
+    color:#fff;
+    padding:10px 16px;
     border-radius:8px;
     font-weight:700;
+    text-decoration:none;
     transition:.3s;
 }
-.cta:hover{background:#ffec8b;}
 
-/* --- HERO (FULL SCREEN) --- */
+.cta:hover{
+    background:#333;
+}
+
+/* ---------- HERO (FULL PAGE) ---------- */
 .hero{
     min-height:100vh;
     background-image:url('images/hero.jpg');
     background-size:cover;
-    background-position:center top;
+    background-position:center;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
     position:relative;
-    padding:140px 20px 90px;
+    padding:140px 20px 100px;
 }
 
 .hero::after{
     content:'';
     position:absolute;
     inset:0;
-    background:linear-gradient(
-        to bottom,
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.75)
-    );
+    background:rgba(0,0,0,0.45);
 }
 
 .hero-inner{
     position:relative;
     z-index:2;
     max-width:900px;
-    margin:auto;
 }
 
 .hero h1{
     font-size:clamp(2.2rem,6vw,3.8rem);
-    color:var(--gold);
+    color:#fff;
     margin-bottom:18px;
 }
 
@@ -96,150 +105,162 @@ body{
     max-width:700px;
     margin:0 auto 28px;
     line-height:1.6;
+    color:#f1f1f1;
 }
 
-.promo-badge{
+.btn{
     display:inline-block;
-    background:var(--gold);
-    color:#900;
-    padding:6px 14px;
-    border-radius:20px;
+    background:#fff;
+    color:#000;
+    padding:14px 24px;
+    border-radius:8px;
     font-weight:700;
-    margin-bottom:16px;
+    text-decoration:none;
+    transition:.3s;
 }
 
-/* --- Main Content --- */
-.site-main{padding:40px 36px;}
+.btn:hover{
+    background:#e5e5e5;
+}
 
+/* ---------- MAIN ---------- */
+.site-main{
+    padding:60px 32px;
+}
+
+/* ---------- PRODUCT GRID ---------- */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:24px;
+    gap:28px;
 }
 
 .card{
     background:var(--card);
-    padding:16px;
-    border-radius:12px;
+    padding:20px;
+    border-radius:16px;
     text-align:center;
-    box-shadow:0 8px 30px rgba(0,0,0,.6);
-}
-.card img{
-    width:70%;
-    height:200px;
-    object-fit:cover;
-    border-radius:10px;
+    border:1px solid var(--border);
+    transition:.3s;
 }
 
-/* --- ABOUT --- */
-.about-section{padding:20px 10px;}
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+    margin-bottom:14px;
+}
+
+.card h3{
+    margin-bottom:8px;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:.95rem;
+}
+
+.price{
+    font-weight:800;
+    margin-top:10px;
+}
+
+/* ---------- ABOUT ---------- */
+.about-section{
+    padding:60px 20px;
+}
+
 .about-inner{
     display:flex;
-    gap:28px;
+    gap:40px;
     align-items:center;
     justify-content:center;
     flex-wrap:wrap;
+    max-width:1100px;
+    margin:auto;
 }
+
 .about-inner img{
     max-width:420px;
     width:100%;
-    border-radius:12px;
+    border-radius:16px;
 }
 
-/* --- ORDER SECTION --- */
-.order-section{
-    background:#330000;
-    padding:40px 20px;
-    margin-top:60px;
-    border-top:3px solid var(--gold);
+.about-inner .text{
+    max-width:520px;
 }
+
+.about-inner h1,
+.about-inner h2{
+    margin-bottom:12px;
+}
+
+/* ---------- ORDER SECTION ---------- */
+.order-section{
+    padding:60px 20px;
+    border-top:1px solid var(--border);
+    margin-top:60px;
+}
+
 #orderForm{
-    max-width:360px;
+    max-width:380px;
     margin:auto;
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:12px;
 }
+
 #orderForm input,
 #orderForm select{
     padding:12px;
-    border-radius:6px;
-    border:none;
+    border-radius:8px;
+    border:1px solid var(--border);
+    font-size:15px;
 }
+
 #orderForm button{
-    background:var(--gold);
-    color:#900;
-    padding:12px;
+    background:#000;
+    color:#fff;
+    padding:14px;
     border:none;
-    font-size:18px;
+    border-radius:8px;
+    font-size:16px;
     cursor:pointer;
 }
 
-/* --- FOOTER --- */
-.site-footer{
-    padding:28px;
-    text-align:center;
-    border-top:3px solid var(--gold);
+#orderForm button:hover{
+    background:#333;
 }
 
-/* --- CHRISTMAS DECORATIONS --- */
-.christmas-tree{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:90px;
-    pointer-events:none;
-}
-.christmas-bell{
-    position:fixed;
-    top:10px;
-    right:10px;
-    width:90px;
-    pointer-events:none;
-}
-
-/* --- MOBILE FIX --- */
-@media(max-width:720px){
-    .hero{
-        min-height:100vh;
-        padding:150px 16px 90px;
-    }
-    .site-header{
-        flex-direction:column;
-        gap:10px;
-        padding:12px 18px;
-    }
-    .grid{grid-template-columns:1fr;}
-    .about-inner{flex-direction:column;}
-}
-/* --- Contact Page Reviews --- */
+/* ---------- CONTACT REVIEWS ---------- */
 .contact-reviews{
     padding:60px 20px;
-    background:#330000;
-    text-align:center;
-    margin-top:40px;
+    background:#fafafa;
+    margin-top:60px;
 }
 
 .contact-reviews h2{
-    color:var(--gold);
+    text-align:center;
     margin-bottom:30px;
-    text-transform:uppercase;
-    letter-spacing:1px;
 }
 
 .reviews-mini{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:24px;
     max-width:900px;
-    margin:0 auto;
+    margin:auto;
 }
 
 .review-mini-card{
-    background:#440000;
+    background:#fff;
     padding:20px;
-    border-radius:14px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.5);
+    border-radius:16px;
+    border:1px solid var(--border);
 }
 
 .review-mini-card p{
@@ -248,22 +269,48 @@ body{
 }
 
 .review-mini-card h4{
-    color:var(--gold);
-    margin-bottom:6px;
+    margin-bottom:4px;
 }
 
-.review-mini-card .stars{
-    color:gold;
-    letter-spacing:2px;
+.stars{
+    color:#facc15;
 }
-/* --- Social Media Icons --- */
+
+/* ---------- SOCIAL ICONS ---------- */
 .social-icon{
     width:26px;
     height:26px;
-    object-fit:contain;
-    margin-right:10px;
     vertical-align:middle;
+    margin-right:8px;
 }
 
+/* ---------- FOOTER ---------- */
+.site-footer{
+    padding:30px;
+    text-align:center;
+    border-top:1px solid var(--border);
+    margin-top:60px;
+    color:var(--muted);
+}
 
+/* ---------- MOBILE ---------- */
+@media(max-width:720px){
+    .site-header{
+        flex-direction:column;
+        gap:10px;
+        padding:14px 18px;
+    }
 
+    .hero{
+        padding:160px 16px 120px;
+    }
+
+    .about-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+}
