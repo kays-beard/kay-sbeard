@@ -1,224 +1,175 @@
 <!doctype html>
 <html lang="en">
 <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1"/>
-        <title>Shop — Kay's Beard</title>
-        <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Shop — Kay's Beard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-<header class="site-header">
-        <div class="logo">Kay's <span>Beard</span></div>
-        <nav>
-                <a href="index.html">Home</a>
-                <a href="shop.html" class="active">Shop</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-        </nav>
-        <a class="cta" href="#orderForm">Order Now</a>
-</header>
-
-<main class="site-main">
-
-        <!-- CHRISTMAS PROMO ANNOUNCEMENT -->
-        <section class="product-section">
-                <h1>🎄 Christmas Promo</h1>
-                <p style="text-align:center; font-size:1.2rem; color:var(--gold); font-weight:700;">
-                        Special Offer: Kirkland Minoxidil + Derma Roller Combo for <strong>₵110</strong> only!
-                </p>
-        </section>
-
-        <!-- PRODUCTS GRID -->
-        <section class="product-section">
-                <h1>Our Products</h1>
-                <div class="grid">
-
-                        <!-- Promo Combo Highlight -->
-                        <div class="card">
-                                <img src="images/combo.jpg" alt="minoxidil">
-                                <h3>Kirkland Minoxidil + Derma Roller Combo</h3>
-                                <p>Boost beard growth with this ultimate Christmas combo!</p>
-                                <div class="price">₵110</div>
-                        </div>
-
-                        <!-- Individual Products with 20% OFF -->
-                        <div class="card">
-                                <img src="images/minoxidil.jpg" alt="minoxidil">
-                                <h3>Kirkland Minoxidil</h3>
-                                <p>Boost beard growth naturally.</p>
-                                <div class="price">
-                                        <span style="text-decoration: line-through;">₵100</span><br>
-                                        NOW ₵80
-                                </div>
-                        </div>
-
-                        <div class="card">
-                                <img src="images/derma-roller.jpg" alt="derma">
-                                <h3>Derma Roller</h3>
-                                <p>Stimulates hair follicles for thicker growth.</p>
-                                <div class="price">
-                                        <span style="text-decoration: line-through;">₵60</span><br>
-                                        NOW ₵48
-                                </div>
-                        </div>
-
-                        <div class="card">
-                                <img src="images/biotin.jpg" alt="biotin">
-                                <h3>Biotin</h3>
-                                <p>Supports healthy beard and hair growth.</p>
-                                <div class="price">
-                                        <span style="text-decoration: line-through;">₵160</span><br>
-                                        NOW ₵128
-                                </div>
-                        </div>
-
-                        <div class="card">
-                                <img src="images/jamaican-oil.jpg" alt="oil">
-                                <h3>Jamaican Castor Oil</h3>
-                                <p>Moisturizes and strengthens beard hair.</p>
-                                <div class="price">
-                                        <span style="text-decoration: line-through;">₵185</span><br>
-                                        NOW ₵148
-                                </div>
-                        </div>
-
-                        <div class="card">
-                                <img src="images/mielle.jpg" alt="Mielle Rosemary Mint Oil">
-                                <h3>Mielle Rosemary Mint Scalp and Hair Strengthening Oil</h3>
-                                <p>Strengthens hair and promotes a healthy scalp.</p>
-                                <div class="price">
-                                        <span style="text-decoration: line-through;">₵120</span><br>
-                                        NOW ₵96
-                                </div>
-                        </div>
-    
-                        <div class="card">
-                                <img src="images/foam.jpg" alt="Minoxidil foam">
-                                <h3>Minoxidil foam</h3>
-                                <p>Stimulate hair growth and reduce hair loss.</p>
-                                <div class="price">
-                                        <span style="text-decoration: line-through;">₵250</span><br>
-                                        NOW ₵200
-                                </div>
-                 </div>
-            
-                </div>
-        </section>
-
-        <!-- Order Form -->
-        <section class="order-section">
-                <h2>Place Your Order</h2>
-
-                <!-- Wholesale Link -->
-                <p style="text-align:center; font-weight:700; color:var(--gold); margin-bottom:15px;">
-                        Are you buying wholesale? <a href="https://wa.me/233556928298" target="_blank" style="color:#fff; text-decoration:underline;">Contact us directly via WhatsApp</a>
-                </p>
-
-                <form id="orderForm">
-                        <input type="text" id="name" placeholder="Your Full Name" required>
-
-                        <!-- Product Dropdown -->
-                        <label for="product">Select Product</label>
-                        <select id="product" required>
-                                <option value="">-- Choose a product --</option>
-                                <option value="Kirkland Minoxidil + Derma Roller Combo">Kirkland Minoxidil + Derma Roller Combo</option>
-                                <option value="Kirkland Minoxidil">Kirkland Minoxidil</option>
-                                <option value="Derma Roller">Derma Roller</option>
-                                <option value="Biotin">Biotin</option>
-                                <option value="Jamaican Castor Oil">Jamaican Castor Oil</option>
-                                <option value="Mielle Rosemary Mint Oil">Mielle Rosemary Mint Oil</option>
-                                <option value="Menoxidil foam">Minoxidil foam</option>
-
-                        </select>
-
-                        <input type="number" id="quantity" placeholder="Quantity" required>
-                        <input type="text" id="location" placeholder="Delivery Location" required>
-
-                        <!-- Delivery Date Dropdowns -->
-                        <label>Preferred Delivery Date</label>
-                        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                                <select id="day" required>
-                                        <option value="">Day</option>
-                                        <script>
-                                                for (let i = 1; i <= 31; i++) {
-                                                        document.write(`<option value="${i}">${i}</option>`);
-                                                }
-                                        </script>
-                                </select>
-
-                                <select id="month" required>
-                                        <option value="">Month</option>
-                                        <option value="January">January</option>
-                                        <option value="February">February</option>
-                                        <option value="March">March</option>
-                                        <option value="April">April</option>
-                                        <option value="May">May</option>
-                                        <option value="June">June</option>
-                                        <option value="July">July</option>
-                                        <option value="August">August</option>
-                                        <option value="September">September</option>
-                                        <option value="October">October</option>
-                                        <option value="November">November</option>
-                                        <option value="December">December</option>
-                                </select>
-
-                                <select id="year" required>
-                                        <option value="">Year</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2026">2026</option>
-                                </select>
-                        </div>
-
-                        <button type="submit">Submit Order</button>
-                </form>
-        </section>
-
-</main>
 
 <!-- Christmas Decorations -->
 <img src="images/tree.png" class="christmas-tree" alt="Christmas Tree">
 <img src="images/bell.png" class="christmas-bell" alt="Christmas Bell">
 
+<header class="site-header">
+    <div class="logo">Kay's <span>Beard</span></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <a class="cta" href="#orderForm">Order Now</a>
+</header>
+
+<main class="site-main">
+
+    <!-- PROMO -->
+    <section class="product-section">
+        <h1 style="text-align:center;color:var(--gold);">🎄 Christmas Promo</h1>
+        <p style="text-align:center;font-size:1.2rem;color:var(--muted);font-weight:600;">
+            Special Offer: <strong style="color:var(--gold);">
+            Kirkland Minoxidil + Derma Roller Combo for ₵110</strong>
+        </p>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="product-section">
+        <h1 style="text-align:center;">Our Products</h1>
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="images/combo.jpg" alt="Combo">
+                <h3>Kirkland Minoxidil + Derma Roller Combo</h3>
+                <p>Boost beard growth with this ultimate Christmas combo!</p>
+                <strong style="color:var(--gold);font-size:1.2rem;">₵110</strong>
+            </div>
+
+            <div class="card">
+                <img src="images/minoxidil.jpg" alt="Minoxidil">
+                <h3>Kirkland Minoxidil</h3>
+                <p>Boost beard growth naturally.</p>
+                <p><del>₵100</del><br><strong style="color:var(--gold);">NOW ₵80</strong></p>
+            </div>
+
+            <div class="card">
+                <img src="images/derma-roller.jpg" alt="Derma Roller">
+                <h3>Derma Roller</h3>
+                <p>Stimulates hair follicles for thicker growth.</p>
+                <p><del>₵60</del><br><strong style="color:var(--gold);">NOW ₵48</strong></p>
+            </div>
+
+            <div class="card">
+                <img src="images/biotin.jpg" alt="Biotin">
+                <h3>Biotin</h3>
+                <p>Supports healthy beard and hair growth.</p>
+                <p><del>₵160</del><br><strong style="color:var(--gold);">NOW ₵128</strong></p>
+            </div>
+
+            <div class="card">
+                <img src="images/jamaican-oil.jpg" alt="Jamaican Castor Oil">
+                <h3>Jamaican Castor Oil</h3>
+                <p>Moisturizes and strengthens beard hair.</p>
+                <p><del>₵185</del><br><strong style="color:var(--gold);">NOW ₵148</strong></p>
+            </div>
+
+            <div class="card">
+                <img src="images/mielle.jpg" alt="Mielle Oil">
+                <h3>Mielle Rosemary Mint Oil</h3>
+                <p>Strengthens hair and promotes a healthy scalp.</p>
+                <p><del>₵120</del><br><strong style="color:var(--gold);">NOW ₵96</strong></p>
+            </div>
+
+            <div class="card">
+                <img src="images/foam.jpg" alt="Minoxidil Foam">
+                <h3>Minoxidil Foam</h3>
+                <p>Stimulates hair growth and reduces hair loss.</p>
+                <p><del>₵250</del><br><strong style="color:var(--gold);">NOW ₵200</strong></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ORDER -->
+    <section class="order-section">
+        <h2 style="text-align:center;color:var(--gold);">Place Your Order</h2>
+
+        <p style="text-align:center;font-weight:700;color:var(--gold);">
+            Wholesale buyers?
+            <a href="https://wa.me/233556928298" target="_blank" style="color:#fff;text-decoration:underline;">
+                Contact us on WhatsApp
+            </a>
+        </p>
+
+        <form id="orderForm">
+            <input type="text" id="name" placeholder="Your Full Name" required>
+
+            <select id="product" required>
+                <option value="">-- Choose a product --</option>
+                <option>Kirkland Minoxidil + Derma Roller Combo</option>
+                <option>Kirkland Minoxidil</option>
+                <option>Derma Roller</option>
+                <option>Biotin</option>
+                <option>Jamaican Castor Oil</option>
+                <option>Mielle Rosemary Mint Oil</option>
+                <option>Minoxidil Foam</option>
+            </select>
+
+            <input type="number" id="quantity" placeholder="Quantity" required>
+            <input type="text" id="location" placeholder="Delivery Location" required>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                <select id="day" required>
+                    <option value="">Day</option>
+                    <script>
+                        for(let i=1;i<=31;i++) document.write(`<option>${i}</option>`);
+                    </script>
+                </select>
+
+                <select id="month" required>
+                    <option value="">Month</option>
+                    <option>January</option><option>February</option><option>March</option>
+                    <option>April</option><option>May</option><option>June</option>
+                    <option>July</option><option>August</option><option>September</option>
+                    <option>October</option><option>November</option><option>December</option>
+                </select>
+
+                <select id="year" required>
+                    <option value="">Year</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit Order</button>
+        </form>
+    </section>
+
+</main>
 
 <footer class="site-footer">
-        <p>© 2025 Kay's Beard. All Rights Reserved.</p>
+    <p>© 2025 Kay's Beard. All Rights Reserved.</p>
 </footer>
 
 <script>
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-        e.preventDefault();
+document.getElementById("orderForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    let msg =
+        `New Order from Kay's Beard:%0A` +
+        `Name: ${name.value}%0A` +
+        `Product: ${product.value}%0A` +
+        `Quantity: ${quantity.value}%0A` +
+        `Location: ${location.value}%0A` +
+        `Delivery Date: ${day.value} ${month.value} ${year.value}`;
 
-        let name = document.getElementById("name").value;
-        let product = document.getElementById("product").value;
-        let quantity = document.getElementById("quantity").value;
-        let location = document.getElementById("location").value;
-        let day = document.getElementById("day").value;
-        let month = document.getElementById("month").value;
-        let year = document.getElementById("year").value;
-
-        let deliveryDate = `${day} ${month} ${year}`;
-
-        let message = `New Order from Kay's Beard:%0A` +
-                                    `Name: ${name}%0A` +
-                                    `Product: ${product}%0A` +
-                                    `Quantity: ${quantity}%0A` +
-                                    `Location: ${location}%0A` +
-                                    `Delivery Date: ${deliveryDate}`;
-
-        let phone = "233556928298";
-
-        window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
-        alert("✅ Your order has been received! We’ll contact you shortly.");
-        document.getElementById("orderForm").reset();
+    window.open(`https://wa.me/233556928298?text=${msg}`, "_blank");
+    alert("✅ Order received! We’ll contact you shortly.");
+    this.reset();
 });
 </script>
 
 </body>
 </html>
-
-
-
-
-
