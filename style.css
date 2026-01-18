@@ -314,25 +314,44 @@ body{
         grid-template-columns:1fr;
     }
 
-    /* --- NEW PRODUCT BADGE --- */
-.new-badge{
-    position:absolute;
-    top:12px;
-    left:12px;
-    background:#28a745;          /* fresh green */
-    color:#fff;
-    padding:6px 12px;
-    font-size:0.75rem;
-    font-weight:700;
-    border-radius:20px;
-    text-transform:uppercase;
-    box-shadow:0 4px 10px rgba(0,0,0,0.4);
-}
-
-/* ensure card can hold badge */
+   /* --- NOTE STYLE NEW BADGE --- */
 .card{
     position:relative;
 }
 
+.new-badge{
+    position:absolute;
+    top:14px;
+    left:-6px;
+    background:#ffcc00;
+    color:#4a2c00;
+    font-size:0.75rem;
+    font-weight:800;
+    padding:8px 14px 8px 18px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    box-shadow:0 6px 14px rgba(0,0,0,0.45);
+    border-radius:0 6px 6px 0;
 }
+
+/* folded paper effect */
+.new-badge::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:100%;
+    width:0;
+    height:0;
+    border-top:6px solid #cc9a00;
+    border-left:6px solid transparent;
+}
+
+/* slight tilt for realism */
+.new-badge{
+    transform:rotate(-6deg);
+}
+
+
+}
+
 
